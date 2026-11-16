@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f1ea" />
+    <title>Field Notes — Minesweeper</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="wordmark" href="#game" aria-label="Field Notes home">
+          <span class="wordmark-mark" aria-hidden="true">✳</span>
+          <span>FIELD NOTES</span>
+        </a>
+        <div class="topbar-meta">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>MINDSWEEPER / 001</span>
+        </div>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">A quiet little challenge</p>
+        <h1 id="page-title">Clear the field.<br /><em>Trust your instincts.</em></h1>
+        <p class="hero-copy">Find every safe square without disturbing a mine. Take your time — the board is yours to read.</p>
+      </section>
+
+      <section class="game-layout" id="game" aria-label="Minesweeper game">
+        <aside class="controls-panel">
+          <div class="panel-heading">
+            <span class="section-label">GAME SETTINGS</span>
+            <span class="tiny-spark" aria-hidden="true">✳</span>
+          </div>
+
+          <div class="field-group">
+            <label for="difficulty">Field size</label>
+            <div class="select-wrap">
+              <select id="difficulty">
+                <option value="beginner">Beginner · 9 × 9</option>
+                <option value="intermediate">Intermediate · 16 × 16</option>
+                <option value="expert">Expert · 16 × 30</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="new-game-button" id="new-game" type="button">
+            <span>New game</span>
+            <span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+
+          <div class="how-to">
+            <span class="section-label">HOW TO PLAY</span>
+            <ol>
+              <li><span>01</span> Reveal a square to begin.</li>
+              <li><span>02</span> Numbers show nearby mines.</li>
+              <li><span>03</span> Right-click to mark a mine.</li>
+            </ol>
+          </div>
+
+          <div class="sound-row">
+            <span>Sound effects</span>
+            <button id="sound-toggle" class="sound-toggle" type="button" aria-pressed="true" aria-label="Turn sound effects off">
+              <span class="toggle-knob"></span>
+              <span class="toggle-text">ON</span>
+            </button>
+          </div>
+        </aside>
+
+        <section class="board-panel" aria-live="polite">
+          <div class="game-status">
+            <div class="stat-block">
+              <span class="stat-label">MINES LEFT</span>
+              <strong id="mine-count">10</strong>
+            </div>
+            <button class="face-button" id="face-button" type="button" aria-label="Start a new game">●</button>
+            <div class="stat-block stat-right">
+              <span class="stat-label">TIME</span>
+              <strong id="timer">000</strong>
+            </div>
+          </div>
+
+          <div class="board-frame">
+            <div class="board" id="board" role="grid" aria-label="Minesweeper board"></div>
+          </div>
+          <p class="board-message" id="board-message">Click any square to start</p>
+        </section>
+      </section>
+
+      <footer class="footer">
+        <span>FIELD NOTES / TAKE A BREATH</span>
+        <span>LOCAL EDITION <span class="footer-dot">●</span> 2026</span>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
